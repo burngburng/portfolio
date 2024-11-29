@@ -1,0 +1,199 @@
+/* 별이나 다른 이미지로 바꾸어서 재활용가능--> */
+
+@keyframes ani1 {
+  /*0% { left: 100px; top: 100px; } */
+  0% { left: 0px; top: 0px; } 
+  50% { left: 300px; top: 300px; }
+  100%{ left: 500px; top: 500px; }
+}
+
+@keyframes ani1_2 {
+  /* 0% { left : 200px ; top : 200px; } */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 400px ; top : 400px; }
+  100% { left : 600px ; top : 600px; }
+}
+
+@keyframes ani1_3 {
+  /* 0% { left : 300px ; top : 100px; } */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 500px ; top : 300px; }
+  100% { left : 700px ; top : 500px; }
+}
+
+@keyframes ani1_4 {
+  /* 0% { left : 400px ; top : 100px; }  */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 600px ; top : 300px; }
+  100% { left : 800px ; top : 500px; }
+}
+
+@keyframes ani1_5 {
+  /* 0% { left : 500px ; top : 50px; }  */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 700px ; top : 200px; }
+  100% { left : 900px ; top : 350px; }
+}
+
+@keyframes ani1_6 {
+  /* 0% { left : 5px ; top : 5px; } */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 130px ; top : 130px; }
+  100% { left : 350px ; top : 350px; }
+}
+
+@keyframes ani1_7 {
+  /* 0% { left : 150px ; top : 30px; }  */
+  0% { left: 0px; top: 0px; } 
+  50% { left : 300px ; top : 180px; }
+  100% { left : 450px ; top : 330px; }
+}
+
+@keyframes scales {
+  0% { transform : scale(1); } /* scale(1)은 기본 크기 */
+  50% { transform: scale(1.5); }
+  100% { transform : scale(1); }
+}
+
+/* 공통부분은 최대한 같이 묶기 */
+.star1, .star2, .star3, .star4, .star5, .star6, .star7 { 
+  position: absolute; 
+  display: inline-block;
+  width : 0px;
+  height : 0px;
+  /* margin : 25px 0;  */
+  border-right : 40px solid transparent ; 
+  border-left : 40px solid transparent ; 
+  transform : rotate(35deg) ;
+  z-index : -1 ;
+}
+/* 아래의 컨테이너 내에서 정의된 애니메이션 ani1, _2 등을 실행함. */
+.star1, .laugh1, .safe1, .anxious1, .chagrin1 { animation: ani1 10s linear infinite; }
+.star2, .laugh2, .safe2, .anxious2, .chagrin2 { animation: ani1_2 10s linear infinite; }
+.star3, .laugh3, .safe3, .anxious3, .chagrin3 { animation: ani1_3 10s linear infinite; }
+.star4, .laugh4, .safe4, .anxious4, .chagrin4 { animation: ani1_4 10s linear infinite; }
+.star5, .laugh5, .safe5, .anxious5, .chagrin5 { animation: ani1_5 10s linear infinite; }
+.star6, .laugh6, .safe6, .anxious6, .chagrin6 { animation: ani1_6 10s linear infinite; }
+.star7, .laugh7, .safe7, .anxious7, .chagrin7 { animation: ani1_7 10s linear infinite; }
+
+.star1::before, .star1::after, .star3::before, .star4::before,
+.star2::before, .star2::after, .star3::after, .star4::after,
+.star5::before, .star5::after, .star6::before, .star6::after,
+.star7::before, .star7::after, .laugh1::before, .laugh1::after,
+.laugh2::before, .laugh2::after, .laugh3::before, .laugh3::after,
+.laugh4::before, .laugh4::after, .laugh5::before, .laugh5::after,
+.laugh6::before, .laugh6::after, .laugh7::before, .laugh7::after,
+.heart1::before, .heart1::after, .heart2::before, .heart2::after,
+.heart3::before, .heart3::after, .heart4::before, .heart4::after,
+.heart5::before, .heart5::after, .heart6::before, .heart6::after,
+.heart7::before, .heart7::after {
+  content : "";
+  position : absolute; 
+  width : 0px; 
+  top : 0px;
+  height : 0px;
+  left : -40px; 
+  border-right : 40px solid transparent; 
+  border-left : 40px solid transparent ;
+}
+.star1::before, .star2::before, .star3::before, .star4::before, 
+.star5::before, .star6::before, .star7::before {
+  transform: rotate(71deg); 
+}
+.star1::after, .star2::after, .star3::after, .star4::after, 
+.star5::after, .star6::after, .star7::after {
+  transform: rotate(-71deg);
+}
+
+/* 첫번째 별 */
+.star1.color1 { /* 붙여서 선언해야함. */
+  border-bottom : 28px solid pink ; 
+}
+.star1.color1::before,
+.star1.color1::after {
+  border-bottom : 28px solid pink;
+}
+  
+/* 두번째 별 */
+.star2.color2 {
+  border-bottom : 28px solid orange;
+}
+.star2.color2::before,  
+.star2.color2::after {
+  border-bottom : 28px solid orange;
+}
+  
+/* 세번째 별 */
+.star3.color3 {
+  border-bottom : 28px solid skyblue;
+}
+.star3.color3::before,
+.star3.color3::after {
+  border-bottom : 28px solid skyblue;
+}
+  
+/* 네번째 별 */
+.star4.color4 {
+  border-bottom : 28px solid limegreen;
+}
+.star4.color4::before,
+.star4.color4::after {
+  border-bottom : 28px solid limegreen;
+}
+  
+/* 다섯번째 별 */
+.star5.color5 {
+  border-bottom : 28px solid lightcoral;
+}
+.star5.color5::before,
+.star5.color5::after {
+  border-bottom : 28px solid lightcoral;
+}
+  
+/* 여섯번째 별 */
+.star6.color6 {
+  border-bottom : 28px solid mediumpurple;
+}
+.star6.color6::before,
+.star6.color6::after {
+  border-bottom : 28px solid mediumpurple;
+}
+  
+/* 일곱번째 별 */
+.star7.color7 {
+  border-bottom : 28px solid #9ACD32;
+}
+.star7.color7::before,
+.star7.color7::after {
+  border-bottom : 28px solid #9ACD32;
+}
+/* 애니메이션이 발생할 기준 컨테이너 */
+.animation-container {
+  position : relative; /*별들이 이 요소를 기준으로 위치 설정*/
+  width : 100%; /*필요에 따라 크기 조정*/
+  height : 100%; /*필요에 따라 크기 조정*/
+  left : 0;
+  top : 0;
+}
+
+.laugh1, .laugh2, .laugh3, .laugh4, .laugh5, .laugh6, .laugh7,
+.heart1, .heart2, .heart3, .heart4, .heart5, .heart6, .heart7, 
+.safe1, .safe2, .safe3, .safe4, .safe5, .safe6, .safe7,
+.tear1, .tear2, .tear3, .tear4, .tear5, .tear6, .tear7, 
+.anxious1, .anxious2, .anxious3, .anxious4, .anxious5, .anxious6, .anxious7, 
+.anger1, .anger2, .anger3, .anger4, .anger5, .anger6, .anger7,
+.chagrin1, .chagrin2, .chagrin3, .chagrin4, .chagrin5, .chagrin6, .chagrin7 {
+  position : absolute;
+  display: inline-block;
+  z-index : -1 ;
+  width : 70px; 
+  height : auto;
+}
+
+.heart1, .tear1, .anger1 { animation : scales 1.5s linear infinite, ani1 10s linear infinite; }
+.heart2, .tear2, .anger2 { animation : scales 1.5s linear infinite, ani1_2 10s linear infinite; }
+.heart3, .tear3, .anger3 { animation : scales 1.5s linear infinite, ani1_3 10s linear infinite; }
+.heart4, .tear4, .anger4 { animation : scales 1.5s linear infinite, ani1_4 10s linear infinite; }
+.heart5, .tear5, .anger5 { animation : scales 1.5s linear infinite, ani1_5 10s linear infinite; }
+.heart6, .tear6, .anger6 { animation : scales 1.5s linear infinite, ani1_6 10s linear infinite; }
+.heart7, .tear7, .anger7 { animation : scales 1.5s linear infinite, ani1_7 10s linear infinite; }
